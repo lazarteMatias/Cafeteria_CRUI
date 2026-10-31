@@ -1,0 +1,13 @@
+{
+  "name": "cafeteria-crui-api",
+  "version": "1.0.0",
+  "description": "Mini API de la Cafetería del CRUI con Node.js y Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

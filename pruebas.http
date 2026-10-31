@@ -1,0 +1,55 @@
+@url = http://localhost:3000
+
+### Bienvenida
+GET {{url}}/
+
+### Listar todos
+GET {{url}}/api/productos
+
+### Producto existente (200)
+GET {{url}}/api/productos/1
+
+### Producto inexistente (404)
+GET {{url}}/api/productos/999
+
+### Crear producto (201)
+POST {{url}}/api/productos
+Content-Type: application/json
+
+{ "nombre": "Submarino", "precio": 2500, "categoria": "bebida" }
+
+### Crear con nombre vacío (400)
+POST {{url}}/api/productos
+Content-Type: application/json
+
+{ "nombre": "   ", "precio": 2500 }
+
+### Crear con precio como texto (400)
+POST {{url}}/api/productos
+Content-Type: application/json
+
+{ "nombre": "Brownie", "precio": "1500" }
+
+### Crear con precio cero o negativo (400)
+POST {{url}}/api/productos
+Content-Type: application/json
+
+{ "nombre": "Brownie", "precio": -10 }
+
+### Modificar producto (200)
+PUT {{url}}/api/productos/2
+Content-Type: application/json
+
+{ "nombre": "Medialuna de manteca", "precio": 1000, "categoria": "comida" }
+
+### Modificar producto inexistente (404)
+PUT {{url}}/api/productos/999
+Content-Type: application/json
+
+{ "nombre": "X", "precio": 100 }
+
+### Eliminar producto (200)
+DELETE {{url}}/api/productos/4
+
+### Verificar que ya no existe (404)
+GET {{url}}/api/productos/4
